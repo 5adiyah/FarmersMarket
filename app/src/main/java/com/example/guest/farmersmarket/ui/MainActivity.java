@@ -10,12 +10,9 @@ import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-
 import com.example.guest.farmersmarket.R;
 import android.location.LocationListener;
 import android.widget.Toast;
-
 import android.location.Address;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -23,7 +20,6 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -73,16 +69,12 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
             userLong = location.getLongitude();
             userLat = location.getLatitude();
 
-            System.out.println("HI " + location.getLatitude());
-
 
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    ///REFRESHING LOCATION AND CURRENT MESSAGES VISIBLE.
+                    ///REFRESHING LOCATION AND MARKER
                     userLocation = new LatLng(userLat, userLong);
-                    System.out.println("HELLO " + userLocation);
-                    // Add a marker in Sydney and move the camera
                     mMap.clear();
                     mMap.addMarker(new MarkerOptions().position(userLocation).title("Marker at " + getLocationInfo()));
                     mMap.moveCamera(CameraUpdateFactory.newLatLng(userLocation));
@@ -111,7 +103,7 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         Geocoder geocoder = new Geocoder(MainActivity.this, Locale.getDefault());
         ArrayList name = new ArrayList();
         try {
-            List<Address> address = geocoder.getFromLocation(userLat, userLong, 1);
+            List<Address> address = geocoder.getFromLocation(userLat, userLong, 5);
             Address userLocationInfo = address.get(0);
             name.add(userLocationInfo.getAddressLine(0));
         } catch (IOException e) {
@@ -119,9 +111,6 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         }
         return name.get(0).toString();
     }
-
-
-
 
 
     @Override
