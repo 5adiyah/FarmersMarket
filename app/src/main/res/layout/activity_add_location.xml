@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.guest.farmersmarket.AddLocationActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/background"
+        android:src="@drawable/b5"
+        android:scaleType="fitXY" />
+
+    <RelativeLayout
+        android:layout_width="380dp"
+        android:layout_height="630dp"
+        android:background="@drawable/roundcorners"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingTop="220dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/nameEditText"
+                android:textColorHint="#ffffff"
+                android:textSize="11sp"
+                android:backgroundTint="#ffffff"
+                android:hint="Name"/>
+
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:id="@+id/locationEditText"
+                android:textColorHint="#ffffff"
+                android:textSize="11sp"
+                android:backgroundTint="#ffffff"
+                android:hint="Location"/>
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:id="@+id/descriptionEditText"
+                android:textColorHint="#ffffff"
+                android:textSize="11sp"
+                android:backgroundTint="#ffffff"
+                android:hint="Description"/>
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:id="@+id/imageUrl"
+                android:textColorHint="#ffffff"
+                android:textSize="11sp"
+                android:backgroundTint="#ffffff"
+                android:fontFamily="sans-serif"
+                android:hint="Image Url"/>
+
+
+
+            <Button
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/createMarketButton"
+                android:layout_marginTop="30dp"
+                android:background="#ffffff"
+                android:text="Add Market"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Click here to view list of markets"
+                android:id="@+id/marketListView"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:textColor="#ffffff"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
