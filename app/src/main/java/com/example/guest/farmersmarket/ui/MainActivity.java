@@ -7,19 +7,34 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 
+import com.example.guest.farmersmarket.MapsActivity;
 import com.example.guest.farmersmarket.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    @Bind(R.id.addLocationButton) RelativeLayout mAddLocationButton;
+    @Bind(R.id.findMarketButton) RelativeLayout mFindMarketButton;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+
+        mAddLocationButton.setOnClickListener(this);
+        mFindMarketButton.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -70,6 +85,20 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(view == mAddLocationButton) {
+            Intent intent = new Intent(MainActivity.this, AddLocationActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        if(view == mFindMarketButton) {
+            Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+            startActivity(intent);
+            finish();
         }
     }
 
