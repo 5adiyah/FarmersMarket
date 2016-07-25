@@ -18,7 +18,8 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".CreateAccountActivity" />
         <activity android:name=".AddLocationActivity" />
-        <activity android:name=".MarketsActivity"></activity>
+        <activity android:name=".MarketsActivity" />
+        <activity android:name=".FindMarketActivity"></activity>
     </application>
 
 </manifest>
