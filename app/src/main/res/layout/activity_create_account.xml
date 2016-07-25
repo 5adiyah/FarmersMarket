@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.guest.farmersmarket.CreateAccountActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/imageView"
+        android:src="@drawable/a7"
+        android:scaleType="fitXY" />
+
+    <RelativeLayout
+        android:layout_width="380dp"
+        android:layout_height="630dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="#99000000"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Farmers Market"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:textColor="#ffffff"
+            android:textSize="40sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="50dp"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/nameEditText"
+                android:textColorHint="#ffffff"
+                android:textSize="11sp"
+                android:backgroundTint="#ffffff"
+                android:inputType="textEmailAddress"
+                android:hint="Name"/>
+
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:id="@+id/emailEditText"
+                android:textColorHint="#ffffff"
+                android:textSize="11sp"
+                android:backgroundTint="#ffffff"
+                android:hint="Email"/>
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:id="@+id/passwordEditText"
+                android:textColorHint="#ffffff"
+                android:textSize="11sp"
+                android:backgroundTint="#ffffff"
+                android:inputType="textPassword"
+                android:fontFamily="sans-serif"
+                android:hint="Password"/>
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:id="@+id/confirmPasswordEditText"
+                android:textColorHint="#ffffff"
+                android:textSize="11sp"
+                android:backgroundTint="#ffffff"
+                android:inputType="textPassword"
+                android:fontFamily="sans-serif"
+                android:hint="Confirm Password"/>
+
+
+            <Button
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/createUserButton"
+                android:layout_marginTop="30dp"
+                android:background="#ffffff"
+                android:text="Sign up"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already have an account? Log in here!"
+                android:id="@+id/loginTextView"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:textColor="#ffffff"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
