@@ -160,7 +160,13 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                         if (response.isSuccessful()) {
                             JSONObject marketJson = new JSONObject(jsonData);
                             JSONObject marketDetailsJson = marketJson.getJSONObject("marketdetails");
-                            String address = marketDetailsJson.getString("Address");
+
+                            String oldAddress = marketDetailsJson.getString("Address");
+                            int parenthesisIndex1 = oldAddress.indexOf("(");
+                            int parenthesisIndex2 = oldAddress.indexOf(")");
+                            String replace = oldAddress.substring(parenthesisIndex1 -1, parenthesisIndex2 + 1);
+                            String address = oldAddress.replace(replace, "");
+
                             String products = marketDetailsJson.getString("Products");
                             String schedule = marketDetailsJson.getString("Schedule");
                             MarketDetails marketDetails = new MarketDetails(address, products, schedule);
@@ -169,6 +175,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                     } catch (IOException e) {
                         e.printStackTrace();
                     } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (StringIndexOutOfBoundsException e) {
                         e.printStackTrace();
                     }
                 }
@@ -183,11 +191,12 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         if(view == mSubmitMarket){
             ArrayList<MarketDetails> marketDetails = getMarketDetails(markets);
             if(marketDetails.size() > 0){
-                for(MarketDetails md : marketDetails){
-//                    LatLng newLatLng = getNewUserLocation(marketDetails.get(0).getAddress());
-                    System.out.println("YO " + md.getAddress());
-//                    mMap.addMarker().title("Marker at " + newLatLng));
-                }
+                LatLng newLatLng = getNewUserLocation(marketDetails.get(0).getAddress());
+                mMap.addMarker(new MarkerOptions().position(newLatLng).title("Marker at " + newLatLng));
+//                for(MarketDetails md : marketDetails){
+//                    LatLng newLatLng = getNewUserLocation(md.getAddress());
+//                    mMap.addMarker(new MarkerOptions().position(newLatLng).title("Marker at " + md.getAddress()));
+//                }
             }
         }
     }

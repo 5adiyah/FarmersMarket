@@ -3,6 +3,7 @@ package com.example.guest.farmersmarket;
 /**
  * Created by Guest on 7/26/16.
  */
+
 public class Market {
     private String id;
     private String marketName;
@@ -12,6 +13,7 @@ public class Market {
     public Market(String id, String marketName) {
         this.id = id;
         this.marketName = marketName;
+
     }
 
     public String getId() {
@@ -29,4 +31,5 @@ public class Market {
     public void setMarketName(String marketName) {
         this.marketName = marketName;
     }
+
 }
