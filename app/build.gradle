@@ -29,6 +29,8 @@ dependencies {
     compile 'com.firebaseui:firebase-ui-database:0.4.1'
     compile 'com.google.firebase:firebase-auth:9.0.2'
     compile 'com.google.android.gms:play-services:9.0.2'
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'se.akerfeldt:okhttp-signpost:1.1.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

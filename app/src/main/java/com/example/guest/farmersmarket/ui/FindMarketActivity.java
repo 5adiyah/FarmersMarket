@@ -25,6 +25,8 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.location.LocationListener;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 import android.location.Address;
 
@@ -33,7 +35,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class FindMarketActivity extends AppCompatActivity implements OnMapReadyCallback {
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
+public class FindMarketActivity extends AppCompatActivity implements OnMapReadyCallback, View.OnClickListener{
 
     private GoogleMap mMap;
     private LocationManager locationManager;
@@ -43,10 +48,15 @@ public class FindMarketActivity extends AppCompatActivity implements OnMapReadyC
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
+
+    @Bind(R.id.submitMarket) Button mSubmitMarket;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_market);
+        ButterKnife.bind(this);
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -84,6 +94,18 @@ public class FindMarketActivity extends AppCompatActivity implements OnMapReadyC
                 }
             }
         };
+
+        mSubmitMarket.setOnClickListener(this);
+    }
+
+    public void onClick(View view){
+        if(view == mSubmitMarket){
+            Intent intent = new Intent(FindMarketActivity.this, NearbyMarketsActivity.class);
+            intent.putExtra("longitude", userLong);
+            intent.putExtra("latitude", userLat);
+            startActivity(intent);
+            finish();
+        }
     }
 
     private final LocationListener listener = new LocationListener() {
