@@ -1,6 +1,7 @@
 package com.example.guest.farmersmarket.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,9 @@ import android.widget.TextView;
 
 import com.example.guest.farmersmarket.R;
 import com.example.guest.farmersmarket.models.Market;
+import com.example.guest.farmersmarket.ui.MarketDetailActivity;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -46,7 +50,7 @@ public class MarketListAdapter extends RecyclerView.Adapter<MarketListAdapter.Ma
         return mMarkets.size();
     }
 
-    public class MarketViewHolder extends RecyclerView.ViewHolder {
+    public class MarketViewHolder extends RecyclerView.ViewHolder implements  View.OnClickListener {
         @Bind(R.id.marketNameTextView)
         TextView mMarketNameTextView;
 
@@ -57,10 +61,22 @@ public class MarketListAdapter extends RecyclerView.Adapter<MarketListAdapter.Ma
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
+            itemView.setOnClickListener(this);
+
         }
 
         public void bindMarket(Market market) {
             mMarketNameTextView.setText(market.getMarketName());
+        }
+
+        @Override
+        public void onClick(View view) {
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, MarketDetailActivity.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("marketName", Parcels.wrap(mMarkets));
+            mContext.startActivity(intent);
+
         }
     }
 }
