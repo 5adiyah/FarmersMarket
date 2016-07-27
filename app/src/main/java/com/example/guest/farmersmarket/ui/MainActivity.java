@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
-import com.example.guest.farmersmarket.MapsActivity;
+//import com.example.guest.farmersmarket.MapsActivity;
 import com.example.guest.farmersmarket.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -96,9 +96,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             finish();
         }
         if(view == mFindMarketButton) {
-            Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+            Intent intent = new Intent(MainActivity.this, AddLocationActivity.class);
             startActivity(intent);
-            finish();
         }
     }
 

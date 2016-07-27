@@ -32,7 +32,8 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".ui.NearbyMarketsActivity"></activity>
+        <activity android:name=".ui.NearbyMarketsActivity" />
+        <activity android:name=".ui.MarketListActivity"></activity>
     </application>
 
 </manifest>

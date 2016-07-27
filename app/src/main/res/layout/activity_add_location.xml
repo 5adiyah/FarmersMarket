@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.guest.farmersmarket.AddLocationActivity">
+    tools:context="com.example.guest.farmersmarket.ui.AddLocationActivity">
 
     <ImageView
         android:layout_width="match_parent"
@@ -22,74 +22,33 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:paddingTop="220dp"
-            android:orientation="vertical">
-
-            <EditText
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:id="@+id/nameEditText"
-                android:textColorHint="#ffffff"
-                android:textSize="11sp"
-                android:backgroundTint="#ffffff"
-                android:hint="Name"/>
+            android:orientation="vertical"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="197dp">
 
 
             <EditText
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:id="@+id/locationEditText"
+                android:id="@+id/zipCodeEditText"
                 android:textColorHint="#ffffff"
                 android:textSize="11sp"
                 android:backgroundTint="#ffffff"
-                android:hint="Location"/>
-
-            <EditText
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:id="@+id/descriptionEditText"
-                android:textColorHint="#ffffff"
-                android:textSize="11sp"
-                android:backgroundTint="#ffffff"
-                android:hint="Description"/>
-
-            <EditText
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:id="@+id/imageUrl"
-                android:textColorHint="#ffffff"
-                android:textSize="11sp"
-                android:backgroundTint="#ffffff"
-                android:fontFamily="sans-serif"
-                android:hint="Image Url"/>
-
+                android:hint="zip code"
+                android:textAlignment="center" />
 
 
             <Button
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:id="@+id/createMarketButton"
+                android:id="@+id/findMarketButton"
                 android:layout_marginTop="30dp"
                 android:background="#ffffff"
-                android:text="Add Market"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Click here to view list of markets"
-                android:id="@+id/marketListView"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"
-                android:textColor="#ffffff"/>
+                android:text="Find Market"/>
 
         </LinearLayout>
 
