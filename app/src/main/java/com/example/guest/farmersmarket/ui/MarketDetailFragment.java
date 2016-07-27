@@ -7,12 +7,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.guest.farmersmarket.MarketDetails;
 import com.example.guest.farmersmarket.R;
 import com.example.guest.farmersmarket.models.Market;
+import com.example.guest.farmersmarket.models.Review;
 import com.example.guest.farmersmarket.service.MarketService;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,15 +34,16 @@ import okhttp3.Response;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MarketDetailFragment extends Fragment {
+public class MarketDetailFragment extends Fragment implements View.OnClickListener {
+    @Bind(R.id.reviewText) TextView mReviewText;
     @Bind(R.id.marketNameTextView) TextView mMarketNameTextView;
     @Bind(R.id.marketScheduleTextView) TextView mMarketScheduleTextView;
     @Bind(R.id.marketAddressTextView) TextView mMarketAddressTextView;
     @Bind(R.id.marketProductsTextView) TextView mMarketProductsTextView;
+    @Bind(R.id.submitReviewButton) Button mSubmitReviewButton;
 
     private Market mMarket;
-
-    private ArrayList<MarketDetails> mMarketDetailsArray = new ArrayList<MarketDetails>();
+    private DatabaseReference mEventReference;
 
     public static MarketDetailFragment newInstance(Market market) {
         MarketDetailFragment marketDetailFragment = new MarketDetailFragment();
@@ -61,19 +66,29 @@ public class MarketDetailFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_market_detail, container, false);
         ButterKnife.bind(this, view);
-        Log.d("array up", String.valueOf(mMarketDetailsArray.size()));
 
-//        while(mMarketDetailsArray.size() >= 1){
-//            if(mMarketDetailsArray.size() > 0){
-//
-//                System.out.println("hello" + mMarketAddressTextView.getText().toString());
-//                break;
-//            }
-//        }
+        mEventReference = FirebaseDatabase
+                .getInstance()
+                .getReference()
+                .child("Review");
 
         mMarketNameTextView.setText(mMarket.getMarketName()); //this changes the title
-
+        mSubmitReviewButton.setOnClickListener(this);
         return view;
+    }
+
+    public void onClick(View v){
+        if(v==mSubmitReviewButton){
+            String marketId = mMarket.getId();
+            String reviewText = mReviewText.getText().toString();
+            Review review = new Review(marketId, reviewText);
+            saveReviewToFirebase(review);
+
+        }
+    }
+
+    public void saveReviewToFirebase(Review review){
+        mEventReference.push().setValue(review);
     }
 
     private void getMarketDetails(Market market) {

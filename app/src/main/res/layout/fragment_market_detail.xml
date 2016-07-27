@@ -89,7 +89,7 @@
                         android:inputType="textMultiLine"
                         android:ems="10"
                         android:hint="type your review here ..."
-                        android:id="@+id/editText"
+                        android:id="@+id/reviewText"
                         android:layout_weight="0.10" />
 
 
