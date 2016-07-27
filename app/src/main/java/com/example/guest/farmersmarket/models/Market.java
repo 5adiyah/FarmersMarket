@@ -1,4 +1,4 @@
-package com.example.guest.farmersmarket;
+package com.example.guest.farmersmarket.models;
 
 /**
  * Created by Guest on 7/26/16.
@@ -10,7 +10,7 @@ public class Market {
 
     public Market(){}
 
-    public Market(String id, String marketName) {
+    public Market(String marketName, String id) {
         this.id = id;
         this.marketName = marketName;
 
