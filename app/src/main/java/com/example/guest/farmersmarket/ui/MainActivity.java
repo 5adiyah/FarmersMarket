@@ -8,10 +8,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.RelativeLayout;
 
-import com.example.guest.farmersmarket.MapsActivity;
 import com.example.guest.farmersmarket.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FirebaseAuth.AuthStateListener mAuthListener;
     @Bind(R.id.addLocationButton) RelativeLayout mAddLocationButton;
     @Bind(R.id.findMarketButton) RelativeLayout mFindMarketButton;
+    @Bind(R.id.readReviewsButton) RelativeLayout mReadReviewsButton;
 
 
 
@@ -35,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mAddLocationButton.setOnClickListener(this);
         mFindMarketButton.setOnClickListener(this);
+        mReadReviewsButton.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -95,11 +95,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
             finish();
         }
-        if(view == mFindMarketButton) {
-            Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+        if (view == mReadReviewsButton) {
+            Intent intent = new Intent(MainActivity.this, ReviewsActivity.class);
             startActivity(intent);
             finish();
         }
+//        if(view == mFindMarketButton) {
+//            Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+//            startActivity(intent);
+//            finish();
+//        }
     }
 
 }

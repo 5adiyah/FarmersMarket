@@ -1,12 +1,11 @@
 package com.example.guest.farmersmarket;
 
-/**
- * Created by Guest on 7/26/16.
- */
+import org.parceler.Parcel;
 
+@Parcel
 public class Market {
-    private String id;
-    private String marketName;
+    String id;
+    String marketName;
 
     public Market(){}
 
@@ -17,11 +16,11 @@ public class Market {
     }
 
     public String getId() {
-        return this.id;
+        return id;
     }
 
     public String getMarketName() {
-        return this.marketName;
+        return marketName;
     }
 
     public void setId(String id) {

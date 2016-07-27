@@ -22,17 +22,13 @@
         </activity>
         <activity android:name=".ui.CreateAccountActivity" />
         <activity android:name=".ui.AddLocationActivity" />
-        <activity android:name=".ui.MarketsActivity" />
-        <activity android:name=".ui.FindMarketActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" />
-        <activity android:name=".ui.NearbyMarketsActivity"></activity>
+        <activity android:name=".ui.ReviewsActivity" />
+        <activity android:name=".ui.MarketListActivity"></activity>
     </application>
 
 </manifest>

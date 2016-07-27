@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "1018700681823",
-    "firebase_url": "https://farmers-market-app.firebaseio.com",
-    "project_id": "farmers-market-app",
-    "storage_bucket": "farmers-market-app.appspot.com"
+    "project_number": "256071107561",
+    "firebase_url": "https://farmers-market-52a1a.firebaseio.com",
+    "project_id": "farmers-market-52a1a",
+    "storage_bucket": "farmers-market-52a1a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1018700681823:android:69798c3c753bd11b",
+        "mobilesdk_app_id": "1:256071107561:android:69798c3c753bd11b",
         "android_client_info": {
           "package_name": "com.example.guest.farmersmarket"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1018700681823-nn3l19tobftf1pe3koqnlojbt2885pr4.apps.googleusercontent.com",
+          "client_id": "256071107561-cfcjf8svi2l74vjkfnv6cqif38pc84hm.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.guest.farmersmarket",
-            "certificate_hash": "D7D08596CFA1B615C48E3F1A85D6A68D2470CD0A"
+            "certificate_hash": "740313F025DD1CAA480C31312D44B4D2863C0388"
           }
         },
         {
-          "client_id": "1018700681823-nuqp1k2in8tpmv82prn8v44mdrajsho6.apps.googleusercontent.com",
+          "client_id": "256071107561-ag3i3501qin24h0go8sic5f3ah1ffqok.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC6br4m1oZ7N5OFQIZW1BF1c8Xg5HrKc-I"
+          "current_key": "AIzaSyBfx9K2JPxxS1zKKNyhq3AFECKqs_lTexI"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "1018700681823-nuqp1k2in8tpmv82prn8v44mdrajsho6.apps.googleusercontent.com",
+              "client_id": "256071107561-ag3i3501qin24h0go8sic5f3ah1ffqok.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
