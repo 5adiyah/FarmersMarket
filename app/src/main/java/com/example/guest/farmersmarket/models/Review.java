@@ -6,12 +6,18 @@ package com.example.guest.farmersmarket.models;
 public class Review {
     String marketId;
     String reviewText;
+    String marketName;
 
     public Review(){}
 
-    public Review(String marketId, String reviewText){
+    public Review(String marketId, String reviewText, String marketName){
         this.marketId = marketId;
         this.reviewText = reviewText;
+        this.marketName = marketName;
+    }
+
+    public String getMarketName() {
+        return marketName;
     }
 
     public String getMarketId() {
@@ -28,5 +34,9 @@ public class Review {
 
     public void setReviewText(String reviewText) {
         this.reviewText = reviewText;
+    }
+
+    public void setMarketName(String marketName) {
+        this.marketName = marketName;
     }
 }

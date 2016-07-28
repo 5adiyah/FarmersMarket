@@ -81,7 +81,7 @@ public class MarketDetailFragment extends Fragment implements View.OnClickListen
         if(v==mSubmitReviewButton){
             String marketId = mMarket.getId();
             String reviewText = mReviewText.getText().toString();
-            Review review = new Review(marketId, reviewText);
+            Review review = new Review(marketId, reviewText, mMarket.getMarketName());
             saveReviewToFirebase(review);
 
         }

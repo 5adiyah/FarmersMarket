@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FirebaseAuth.AuthStateListener mAuthListener;
     @Bind(R.id.addLocationButton) RelativeLayout mAddLocationButton;
     @Bind(R.id.findMarketButton) RelativeLayout mFindMarketButton;
+    @Bind(R.id.readReviewsButton) RelativeLayout mReadReviewsButton;
+
 
 
 
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mAddLocationButton.setOnClickListener(this);
         mFindMarketButton.setOnClickListener(this);
+        mReadReviewsButton.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -97,6 +100,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if(view == mFindMarketButton) {
             Intent intent = new Intent(MainActivity.this, AddLocationActivity.class);
+            startActivity(intent);
+        }
+        if(view == mReadReviewsButton) {
+            Intent intent = new Intent(MainActivity.this, ReviewsActivity.class);
             startActivity(intent);
         }
     }
