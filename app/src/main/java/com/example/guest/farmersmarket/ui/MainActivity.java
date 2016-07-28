@@ -89,7 +89,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(view == mAddLocationButton) {
             Intent intent = new Intent(MainActivity.this, AddLocationActivity.class);
             startActivity(intent);
-            finish();
         }
         if(view == mReadReviewsButton) {
             Intent intent = new Intent(MainActivity.this, ReviewsActivity.class);

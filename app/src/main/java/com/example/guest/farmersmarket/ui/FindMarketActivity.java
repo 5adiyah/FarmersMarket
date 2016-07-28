@@ -38,7 +38,7 @@ import java.util.Locale;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class FindMarketActivity extends AppCompatActivity implements OnMapReadyCallback, View.OnClickListener{
+public class FindMarketActivity extends AppCompatActivity implements OnMapReadyCallback{
 
     private GoogleMap mMap;
     private LocationManager locationManager;
@@ -48,8 +48,6 @@ public class FindMarketActivity extends AppCompatActivity implements OnMapReadyC
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
-
-    @Bind(R.id.submitMarket) Button mSubmitMarket;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,18 +93,8 @@ public class FindMarketActivity extends AppCompatActivity implements OnMapReadyC
             }
         };
 
-        mSubmitMarket.setOnClickListener(this);
     }
 
-    public void onClick(View view){
-        if(view == mSubmitMarket){
-            Intent intent = new Intent(FindMarketActivity.this, NearbyMarketsActivity.class);
-            intent.putExtra("longitude", userLong);
-            intent.putExtra("latitude", userLat);
-            startActivity(intent);
-            finish();
-        }
-    }
 
     private final LocationListener listener = new LocationListener() {
         public void onLocationChanged(Location location) {
