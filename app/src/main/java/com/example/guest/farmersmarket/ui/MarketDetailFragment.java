@@ -135,9 +135,12 @@ public class MarketDetailFragment extends Fragment implements View.OnClickListen
 
 
                         String products = marketDetailsJson.getString("Products");
+                        products = products.replaceAll(";", ",");
                         String schedule = marketDetailsJson.getString("Schedule");
+                        schedule = schedule.replaceAll("<br>", " ");
+                        schedule = schedule.replaceAll(";", "");
                         final MarketDetails marketDetails = new MarketDetails(oldAddress, products, schedule);
-                        Log.d("marketDetails address", marketDetails.getAddress());
+                        Log.d("marketDetails address", marketDetails.getSchedule());
 
 //                        mMarketDetailsArray.add(marketDetails);
                         getActivity().runOnUiThread(new Runnable() {
