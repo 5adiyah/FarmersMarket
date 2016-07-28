@@ -78,24 +78,22 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void getNewUserLocation(String newLocation) {
 
         Geocoder coder = new Geocoder(MapsActivity.this);
-        List<Address> address = new ArrayList<Address>();
+        List<Address> address;
 
         LatLng newLatLng;
 
         try {
             address = coder.getFromLocationName(newLocation, 5);
-            System.out.println("Address getNewUserLocation" + address.size());
+
             if (address.size() != 0) {
                 Address location = address.get(0);
-                System.out.println("Location getNewUserLocation" + location);
                 newLatLng = new LatLng(location.getLatitude(), location.getLongitude());
-                mMap.addMarker(new MarkerOptions().position(newLatLng).title("Marker at " + address));
+                mMap.addMarker(new MarkerOptions().position(newLatLng).title("Marker at " + newLocation));
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(newLatLng));
             } else {
                 String epicodus = "400 SW 6th Avenue, Portland, Oregon";
                 address = coder.getFromLocationName(epicodus, 5);
                 Address location = address.get(0);
-                System.out.println("Location getNewUserLocation" + location);
                 newLatLng = new LatLng(location.getLatitude(), location.getLongitude());
                 mMap.addMarker(new MarkerOptions().position(newLatLng).title("Epicodus at: " + epicodus));
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(newLatLng));
@@ -112,7 +110,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap = googleMap;
         Intent intent = getIntent();
         String address = intent.getStringExtra("address");
-        System.out.println("Address onMapReady" + address);
         getNewUserLocation(address);
 
     }
