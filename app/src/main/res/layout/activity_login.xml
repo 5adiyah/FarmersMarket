@@ -43,6 +43,7 @@
                 android:layout_marginTop="10dp"
                 android:id="@+id/emailEditText"
                 android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
                 android:textSize="11sp"
                 android:backgroundTint="#ffffff"
                 android:hint="Email"/>
@@ -54,6 +55,7 @@
                 android:layout_marginTop="40dp"
                 android:id="@+id/passwordEditText"
                 android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
                 android:textSize="11sp"
                 android:backgroundTint="#ffffff"
                 android:inputType="textPassword"
@@ -68,6 +70,7 @@
                 android:id="@+id/passwordLoginButton"
                 android:layout_marginTop="40dp"
                 android:background="#ffffff"
+                android:textColor="#000"
                 android:text="LOGIN"/>
 
             <TextView

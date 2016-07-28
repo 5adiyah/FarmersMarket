@@ -31,65 +31,8 @@
             android:layout_height="wrap_content"
             android:text="Submit"
             android:id="@+id/submitMarket"
+            android:textColor="#000"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />
-
-        <!--<RelativeLayout-->
-            <!--android:layout_width="380dp"-->
-            <!--android:layout_height="630dp"-->
-            <!--android:background="@drawable/roundcorners"-->
-            <!--android:layout_centerHorizontal="true"-->
-            <!--android:layout_centerVertical="true">-->
-
-            <!--<LinearLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_centerVertical="true"-->
-                <!--android:paddingTop="50dp"-->
-                <!--android:orientation="vertical">-->
-
-                <!--<EditText-->
-                    <!--android:layout_width="250dp"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center_horizontal"-->
-                    <!--android:id="@+id/nameEditText"-->
-                    <!--android:textColorHint="#ffffff"-->
-                    <!--android:textSize="11sp"-->
-                    <!--android:backgroundTint="#ffffff"-->
-                    <!--android:hint="Name"/>-->
-
-
-                <!--<EditText-->
-                    <!--android:layout_width="250dp"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center_horizontal"-->
-                    <!--android:layout_marginTop="20dp"-->
-                    <!--android:id="@+id/locationEditText"-->
-                    <!--android:textColorHint="#ffffff"-->
-                    <!--android:textSize="11sp"-->
-                    <!--android:backgroundTint="#ffffff"-->
-                    <!--android:hint="Location"/>-->
-
-
-                <!--<Button-->
-                    <!--android:layout_width="250dp"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center_horizontal"-->
-                    <!--android:id="@+id/searchMarketButton"-->
-                    <!--android:layout_marginTop="30dp"-->
-                    <!--android:background="#ffffff"-->
-                    <!--android:text="SEARCH"/>-->
-
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Search for a market by name or location"-->
-                    <!--android:layout_gravity="center_horizontal"-->
-                    <!--android:layout_marginTop="30dp"-->
-                    <!--android:textColor="#ffffff"/>-->
-
-            <!--</LinearLayout>-->
-
-        <!--</RelativeLayout>-->
 
 </RelativeLayout>

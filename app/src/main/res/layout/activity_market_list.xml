@@ -5,9 +5,32 @@
     android:layout_height="match_parent"
     tools:context="com.example.guest.farmersmarket.ui.MarketListActivity">
 
-    <android.support.v7.widget.RecyclerView
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recyclerView"/>
+        android:layout_height="fill_parent"
+        android:id="@+id/background"
+        android:src="@drawable/b2"
+        android:scaleType="centerCrop" />
+
+    <RelativeLayout
+        android:layout_width="380dp"
+        android:layout_height="630dp"
+        android:background="@drawable/roundcorners"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true">
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/recyclerView"/>
+
+        </ScrollView>
+
+    </RelativeLayout>
 
 </RelativeLayout>

@@ -37,6 +37,7 @@
                 android:textColorHint="#ffffff"
                 android:textSize="11sp"
                 android:backgroundTint="#ffffff"
+                android:textColor="#ffffff"
                 android:hint="zip code"
                 android:textAlignment="center" />
 
@@ -47,6 +48,7 @@
                 android:layout_gravity="center_horizontal"
                 android:id="@+id/findMarketButton"
                 android:layout_marginTop="30dp"
+                android:textColor="#000"
                 android:background="#ffffff"
                 android:text="Find Market"/>
 

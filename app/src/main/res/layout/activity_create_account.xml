@@ -43,6 +43,7 @@
                 android:layout_gravity="center_horizontal"
                 android:id="@+id/nameEditText"
                 android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
                 android:textSize="11sp"
                 android:backgroundTint="#ffffff"
                 android:inputType="textEmailAddress"
@@ -56,6 +57,7 @@
                 android:layout_marginTop="20dp"
                 android:id="@+id/emailEditText"
                 android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
                 android:textSize="11sp"
                 android:backgroundTint="#ffffff"
                 android:hint="Email"/>
@@ -69,6 +71,7 @@
                 android:textColorHint="#ffffff"
                 android:textSize="11sp"
                 android:backgroundTint="#ffffff"
+                android:textColor="#ffffff"
                 android:inputType="textPassword"
                 android:fontFamily="sans-serif"
                 android:hint="Password"/>
@@ -80,6 +83,7 @@
                 android:layout_marginTop="20dp"
                 android:id="@+id/confirmPasswordEditText"
                 android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
                 android:textSize="11sp"
                 android:backgroundTint="#ffffff"
                 android:inputType="textPassword"

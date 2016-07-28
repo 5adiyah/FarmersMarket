@@ -6,18 +6,25 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:background="#ffffff"
         android:layout_height="match_parent"
         android:padding="10dp">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:id="@+id/marketNameTextView"
-            android:textSize="16dp"
-            android:textStyle="bold"
-            android:text="Market Name"
-            android:textColor="@color/colorPrimary"/>
-        </LinearLayout>
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/marketNameTextView"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:text="Market Name"
+                android:textColor="#fff"/>
+
+        </RelativeLayout>
+    </LinearLayout>
 
 </LinearLayout>

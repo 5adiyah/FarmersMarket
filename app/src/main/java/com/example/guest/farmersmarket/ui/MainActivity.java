@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     @Bind(R.id.addLocationButton) RelativeLayout mAddLocationButton;
-    @Bind(R.id.findMarketButton) RelativeLayout mFindMarketButton;
     @Bind(R.id.readReviewsButton) RelativeLayout mReadReviewsButton;
+    @Bind(R.id.signout) RelativeLayout mSignout;
 
 
 
@@ -36,19 +36,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ButterKnife.bind(this);
 
         mAddLocationButton.setOnClickListener(this);
-        mFindMarketButton.setOnClickListener(this);
         mReadReviewsButton.setOnClickListener(this);
+        mSignout.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    getSupportActionBar().setTitle("Welcome, " + user.getDisplayName() + "!");
-                } else {
-
-                }
+//                FirebaseUser user = firebaseAuth.getCurrentUser();
+//                if (user != null) {
+//                    getSupportActionBar().setTitle("Welcome, " + user.getDisplayName() + "!");
+//                } else {
+//
+//                }
             }
         };
     }
@@ -60,22 +60,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onCreateOptionsMenu(menu);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_logout) {
-            logout();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-    private void logout() {
-        FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-        finish();
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        int id = item.getItemId();
+//        if (id == R.id.action_logout) {
+//            logout();
+//            return true;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
     @Override
     public void onStart() {
@@ -98,14 +91,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
             finish();
         }
-        if(view == mFindMarketButton) {
-            Intent intent = new Intent(MainActivity.this, AddLocationActivity.class);
-            startActivity(intent);
-        }
         if(view == mReadReviewsButton) {
             Intent intent = new Intent(MainActivity.this, ReviewsActivity.class);
             startActivity(intent);
+        }if(view == mSignout) {
+            Intent intent = new Intent(MainActivity.this, ReviewsActivity.class);
+            startActivity(intent);
+            logout();
         }
+    }
+
+    private void logout() {
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 
 }
