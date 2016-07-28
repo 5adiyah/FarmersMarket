@@ -1,7 +1,7 @@
 # Farmers Market ![FarmersMarket](http://ncapples.com/wp-content/uploads/2015/03/BLUE-RIDGE-FARM-DIRECT-MARKET-ICON.png)
 
 
-> **By Farnoosh Johnson, Sadio Ali, Fernanda Lowe**
+> **By Farnoosh Johnson, Sadio Ali, Fernanda Lowe, Blake Bless**
 
 #### _Epicodus Android class Group Project, July 2016_
 
