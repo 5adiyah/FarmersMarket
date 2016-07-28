@@ -1,4 +1,4 @@
-package com.example.guest.farmersmarket;
+package com.example.guest.farmersmarket.models;
 
 /**
  * Created by Guest on 7/26/16.

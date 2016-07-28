@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.example.guest.farmersmarket.MarketDetails;
+import com.example.guest.farmersmarket.models.MarketDetails;
 import com.example.guest.farmersmarket.R;
 import com.example.guest.farmersmarket.adapters.MarketPagerAdapter;
 import com.example.guest.farmersmarket.models.Market;

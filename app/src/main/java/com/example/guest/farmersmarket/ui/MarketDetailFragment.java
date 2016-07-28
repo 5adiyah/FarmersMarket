@@ -1,6 +1,8 @@
 package com.example.guest.farmersmarket.ui;
 
 
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -10,11 +12,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.guest.farmersmarket.MarketDetails;
+
+import com.example.guest.farmersmarket.ui.MapsActivity;
+import com.example.guest.farmersmarket.models.MarketDetails;
 import com.example.guest.farmersmarket.R;
 import com.example.guest.farmersmarket.models.Market;
 import com.example.guest.farmersmarket.models.Review;
 import com.example.guest.farmersmarket.service.MarketService;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -23,7 +28,7 @@ import org.json.JSONObject;
 import org.parceler.Parcels;
 
 import java.io.IOException;
-import java.util.ArrayList;
+
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -41,9 +46,12 @@ public class MarketDetailFragment extends Fragment implements View.OnClickListen
     @Bind(R.id.marketAddressTextView) TextView mMarketAddressTextView;
     @Bind(R.id.marketProductsTextView) TextView mMarketProductsTextView;
     @Bind(R.id.submitReviewButton) Button mSubmitReviewButton;
+    @Bind(R.id.mapButton) Button mMapButton;
 
     private Market mMarket;
     private DatabaseReference mEventReference;
+    public double userLat;
+    public double userLong;
 
     public static MarketDetailFragment newInstance(Market market) {
         MarketDetailFragment marketDetailFragment = new MarketDetailFragment();
@@ -74,6 +82,7 @@ public class MarketDetailFragment extends Fragment implements View.OnClickListen
 
         mMarketNameTextView.setText(mMarket.getMarketName()); //this changes the title
         mSubmitReviewButton.setOnClickListener(this);
+        mMapButton.setOnClickListener(this);
         return view;
     }
 
@@ -84,6 +93,13 @@ public class MarketDetailFragment extends Fragment implements View.OnClickListen
             Review review = new Review(marketId, reviewText, mMarket.getMarketName());
             saveReviewToFirebase(review);
 
+        }
+
+        if(v== mMapButton){
+            String address = mMarketAddressTextView.getText().toString();
+            Intent intent = new Intent(getActivity(), MapsActivity.class);
+            intent.putExtra("address", address);
+            startActivity(intent);
         }
     }
 
@@ -113,6 +129,11 @@ public class MarketDetailFragment extends Fragment implements View.OnClickListen
 //                        String replace = oldAddress.substring(parenthesisIndex1 -1, parenthesisIndex2 + 1);
 //                        String address = oldAddress.replace(replace, "");
 
+
+
+
+
+
                         String products = marketDetailsJson.getString("Products");
                         String schedule = marketDetailsJson.getString("Schedule");
                         final MarketDetails marketDetails = new MarketDetails(oldAddress, products, schedule);
@@ -123,6 +144,7 @@ public class MarketDetailFragment extends Fragment implements View.OnClickListen
                             @Override
                             public void run() {
                                 mMarketAddressTextView.setText(marketDetails.getAddress());
+
                                 mMarketScheduleTextView.setText(marketDetails.getSchedule());
                                 mMarketProductsTextView.setText(marketDetails.getProducts());
                             }
